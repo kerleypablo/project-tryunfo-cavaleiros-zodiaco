@@ -22,7 +22,7 @@ class Form extends Component {
             <p>Pontos restantes = 000</p>
           </div>
           <div className="inputUrl">
-            <Input tipo="text" name="imagem" label="imagem" test="imagem-input" />
+            <Input tipo="text" name="imagem" label="imagem" test="image-input" />
           </div>
           <div className="inputRariade">
             <SelectComp name="raridade" label="raridade" test="rare-input" />
