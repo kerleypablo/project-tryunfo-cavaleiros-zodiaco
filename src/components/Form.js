@@ -20,40 +20,34 @@ class Form extends Component {
               rows="10"
             />
           </label>
-          <div className="inputAtributos">
-            <label htmlFor="atr1">
-              Attr01
-              <input type="number" name="atr1" id="atr1" data-testid="attr1-input" />
-            </label>
-            <label htmlFor="atr2">
-              Attr02
-              <input type="number" name="atr2" id="atr2" data-testid="attr2-input" />
-            </label>
-            <label htmlFor="atr3">
-              Attr03
-              <input type="number" name="atr3" id="atr3" data-testid="attr3-input" />
-            </label>
-            <p>Pontos restantes = 000</p>
-          </div>
-          <div className="inputUrl">
-            <label htmlFor="imagem">
-              Imagem
-              <input type="number" name="imagem" id="imagem" data-testid="image-input" />
-            </label>
-          </div>
-          <div className="inputRariade">
-            <label htmlFor="raridade">
-              <select id="raridade" data-testid="rare-input">
-                <option value="normal">Normal</option>
-                <option value="raro">Raro</option>
-                <option value="muito raro">Muito Raro</option>
-              </select>
-            </label>
-            <label htmlFor="trunf">
-              <input type="checkbox" name="trunf" id="trunf" data-testid="trunfo-input" />
-              Super Trunfo
-            </label>
-          </div>
+          <label htmlFor="atr1">
+            Attr01
+            <input type="number" name="atr1" id="atr1" data-testid="attr1-input" />
+          </label>
+          <label htmlFor="atr2">
+            Attr02
+            <input type="number" name="atr2" id="atr2" data-testid="attr2-input" />
+          </label>
+          <label htmlFor="atr3">
+            Attr03
+            <input type="number" name="atr3" id="atr3" data-testid="attr3-input" />
+          </label>
+          <p>Pontos restantes = 000</p>
+          <label htmlFor="imagem">
+            Imagem
+            <input type="number" name="imagem" id="imagem" data-testid="image-input" />
+          </label>
+          <label htmlFor="raridade">
+            <select id="raridade" data-testid="rare-input">
+              <option value="normal">Normal</option>
+              <option value="raro">Raro</option>
+              <option value="muito raro">Muito Raro</option>
+            </select>
+          </label>
+          <label htmlFor="trunf">
+            <input type="checkbox" name="trunf" id="trunf" data-testid="trunfo-input" />
+            Super Trunfo
+          </label>
           <button type="submit" data-testid="save-button">Salvar</button>
         </form>
       </div>
