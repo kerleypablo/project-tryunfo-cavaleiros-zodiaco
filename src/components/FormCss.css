@@ -1,75 +1,74 @@
-
 .box_form {
-    border: 2px solid black;
-    background-color: red;
-    margin: 10px;
-    padding: 10px;
-  }
-  
-  .box_form h1 {
-    text-align: center;
-  }
-  
-  .newcardForm {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    justify-content: center;
-    width: 450px;
-  }
-  
-  .newcardForm label {
-    padding: 10px;
-    width: 200px;
-  }
-  
-  .newcardForm input {
-    margin-top: 10px;
-    padding: 5px;
-    height: 40px;
-    width: 220%;
-  }
-  
-  .newcardForm p {
-    font-size: small;
-    margin-left: 65%;
-  }
-  
-  .imagensCard {
-    display: flex;
-    align-items: center;
-  }
-  .imagensCard input {
-    width: 300px;
-    padding-right: 180px;
-    margin-left: 35px;
-  }
-  
-  .raridadeCard {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .raridadeCard select {
-    padding-top: 10px;
-    margin-top: 10px;
-    height: 40px;
-    width: 400px;
-  }
-  
-  .checkboxCard {
-    display: flex;
-    align-items: center;
-  }
-  
-  .checkboxCard input {
-    height: 20px;
-    width: 20px;
-    margin-bottom: 10px;
-    margin-right: 10px;
-  }
-  
-  .newcardForm button{
-      height: 40px;
-  }
-  
+  background-color: red;
+  border: 2px solid black;
+  margin: 10px;
+  padding: 10px;
+}
+
+.box_form h1 {
+  text-align: center;
+}
+
+.newcardForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  width: 450px;
+}
+
+.newcardForm label {
+  padding: 10px;
+  width: 200px;
+}
+
+.newcardForm input {
+  height: 40px;
+  margin-top: 10px;
+  padding: 5px;
+  width: 220%;
+}
+
+.newcardForm p {
+  font-size: small;
+  margin-left: 65%;
+}
+
+.imagensCard {
+  align-items: center;
+  display: flex;
+}
+
+.imagensCard input {
+  margin-left: 35px;
+  padding-right: 180px;
+  width: 300px;
+}
+
+.raridadeCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.raridadeCard select {
+  height: 40px;
+  margin-top: 10px;
+  padding-top: 10px;
+  width: 400px;
+}
+
+.checkboxCard {
+  align-items: center;
+  display: flex;
+}
+
+.checkboxCard input {
+  height: 20px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  width: 20px;
+}
+
+.newcardForm button {
+  height: 40px;
+}
