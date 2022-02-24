@@ -1,0 +1,77 @@
+.box {
+  align-items: center;
+  background-color: red;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+  padding: 10px;
+  width: 500px;
+}
+
+.box h1 {
+  margin-bottom: 100px;
+}
+
+.Card {
+  background-color: chartreuse;
+  border: 5px solid white;
+  border-radius: 3%;
+  height: 500px;
+  width: 333px;
+}
+
+.Card h3 {
+  background-color: goldenrod;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 10%;
+  border-top: 2px solid black;
+  display: block;
+  padding-right: 10px;
+  padding-top: 5px;
+  text-align: right;
+  width: 300px;
+  word-wrap: break-word;
+}
+
+.cardInterno {
+  background-color: gray;
+  border: 2px solid black;
+  border-radius: 3%;
+  border-top: 1px;
+  height: 470px;
+  margin: 10px;
+}
+
+.cardInterno img {
+  height: 250px;
+  width: 300px;
+}
+
+.atributosCard {
+  background-color: rgba(201, 212, 45, 0.685);
+  font-size: 20px;
+  text-align: center;
+}
+
+.atributosCard p {
+  background-color: azure;
+  border-radius: 8%;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 15px;
+}
+
+.descrptionCard {
+  display: flex;
+  font-size: 12px;
+  height: 50px;
+  text-align: center;
+  width: 100%;
+}
+
+.descrptionCard p {
+  width: 300px;
+  word-wrap: break-word;
+}
