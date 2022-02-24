@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropType from 'prop-types';
+import './FormCss.css';
 
 class Form extends Component {
   render() {
@@ -78,7 +79,7 @@ class Form extends Component {
             />
           </label>
           <p>Pontos restantes = 000</p>
-          <label htmlFor="imagem">
+          <label htmlFor="imagem" className="imagensCard">
             Imagem
             <input
               type="text"
@@ -89,7 +90,8 @@ class Form extends Component {
               onChange={ onInputChange }
             />
           </label>
-          <label htmlFor="raridade">
+          <label htmlFor="raridade" className="raridadeCard">
+            Raridade:
             <select
               id="raridade"
               data-testid="rare-input"
@@ -101,7 +103,7 @@ class Form extends Component {
               <option value="muito raro">Muito Raro</option>
             </select>
           </label>
-          <label htmlFor="trunf">
+          <label htmlFor="trunf" className="checkboxCard">
             <input
               type="checkbox"
               name="trunf"
