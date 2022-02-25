@@ -3,22 +3,26 @@ import Form from './components/Form';
 import './App.css';
 import Card from './components/Card';
 
+const data = [];
+
 export default class App extends Component {
   constructor() {
     super();
     this.state = {
       cardName: '',
       cardDescription: '',
-      cardAttr1: '',
-      cardAttr2: '',
-      cardAttr3: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
       cardImage: '',
       cardRare: 'normal',
       cardTrunfo: false,
       isSaveButtonDisabled: true,
+      baralho: data,
     };
     this.onInputChange = this.onInputChange.bind(this);
     this.validateButton = this.validateButton.bind(this);
+    this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
   }
 
   onInputChange({ target }) {
@@ -28,6 +32,22 @@ export default class App extends Component {
     this.setState({
       [target.name]: value,
     }, () => this.validateButton());
+  }
+
+  onSaveButtonClick() {
+    const { state } = this;
+    this.setState((prevStete) => ({ baralho: [...prevStete.baralho, state] }));
+    this.setState({
+      cardName: '',
+      cardDescription: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
+      cardImage: '',
+      cardRare: 'normal',
+      cardTrunfo: false,
+      isSaveButtonDisabled: true,
+    });
   }
 
   validateButton() {
@@ -70,6 +90,7 @@ export default class App extends Component {
           cardTrunfo={ state.cardTrunfo }
           isSaveButtonDisabled={ state.isSaveButtonDisabled }
           onInputChange={ this.onInputChange }
+          onSaveButtonClick={ this.onSaveButtonClick }
         />
         <Card
           cardName={ state.cardName }
