@@ -19,6 +19,7 @@ export default class App extends Component {
       cardTrunfo: false,
       isSaveButtonDisabled: true,
       baralho: data,
+      hasTrunfo: false,
     };
     this.onInputChange = this.onInputChange.bind(this);
     this.validateButton = this.validateButton.bind(this);
@@ -36,6 +37,7 @@ export default class App extends Component {
 
   onSaveButtonClick() {
     const { state } = this;
+    if (state.cardTrunfo) this.setState({ hasTrunfo: true });
     this.setState((prevStete) => ({ baralho: [...prevStete.baralho, state] }));
     this.setState({
       cardName: '',
@@ -48,6 +50,7 @@ export default class App extends Component {
       cardTrunfo: false,
       isSaveButtonDisabled: true,
     });
+    console.log(state.baralho);
   }
 
   validateButton() {
@@ -60,7 +63,8 @@ export default class App extends Component {
       cardAttr1,
       cardAttr2,
       cardAttr3,
-      cardImage } = this.state;
+      cardImage,
+    } = this.state;
     const total = Number(cardAttr1) + Number(cardAttr2) + Number(cardAttr3);
 
     if (cardName === ''
@@ -91,6 +95,7 @@ export default class App extends Component {
           isSaveButtonDisabled={ state.isSaveButtonDisabled }
           onInputChange={ this.onInputChange }
           onSaveButtonClick={ this.onSaveButtonClick }
+          hasTrunfo={ state.hasTrunfo }
         />
         <Card
           cardName={ state.cardName }
