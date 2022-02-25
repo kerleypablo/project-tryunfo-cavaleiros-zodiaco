@@ -1,53 +1,61 @@
 .Card {
-  background-color: chartreuse;
+  background-color: rgb(60, 63, 57);
   border: 5px solid white;
   border-radius: 3%;
+  box-shadow: 6px 6px rgba(0, 8, 8, 0.24);
   height: 500px;
   width: 333px;
 }
 
 .Card h3 {
   background-color: goldenrod;
-  border: 1px solid rgba(0, 0, 0, 0);
-  border-radius: 10%;
-  border-top: 2px solid black;
+  color: rgb(12, 58, 39);
   display: block;
+  margin-bottom: 6px;
+  margin-top: 4px;
   padding-right: 10px;
-  padding-top: 5px;
+  padding-top: 2px;
   text-align: right;
-  width: 300px;
+  width: 100%;
   word-wrap: break-word;
 }
 
 .cardInterno {
-  background-color: gray;
-  border: 2px solid black;
+  background-color: goldenrod;
+  border: 3px solid rgb(255, 251, 0);
   border-radius: 3%;
-  border-top: 1px;
   height: 470px;
   margin: 10px;
 }
 
 .cardInterno img {
+  border: 8px solid rgba(92, 10, 4, 0.555);
   height: 250px;
-  width: 300px;
+  width: 100%;
 }
 
 .atributosCard {
-  background-color: rgba(201, 212, 45, 0.685);
+  background-color: rgba(233, 235, 215, 0.685);
+  border: 2px solid black;
+  display: flex;
+  flex-wrap: wrap;
   font-size: 20px;
+  justify-content: center;
   text-align: center;
 }
 
 .atributosCard p {
-  background-color: azure;
-  border-radius: 8%;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 15px;
+  border-bottom: 2px solid black;
+  border-radius: 10%;
+  width: 140px;
+}
+
+.atributosCard span {
+  color: rgb(53, 123, 184);
 }
 
 .descrptionCard {
+  background-color: rgba(240, 248, 255, 0.651);
   display: flex;
   font-size: 12px;
   height: 50px;
@@ -56,6 +64,22 @@
 }
 
 .descrptionCard p {
+  padding-left: 8px;
+  padding-right: 8px;
   width: 300px;
   word-wrap: break-word;
+}
+
+.Trunfo {
+  background-color: rgba(255, 230, 0, 0.664);
+  border: 3px solid black;
+  border-radius: 50%;
+  display: block;
+  font-size: small;
+  height: 70px;
+  margin-top: 180px;
+  padding-left: 14px;
+  padding-top: 19px;
+  position: fixed;
+  width: 70px;
 }

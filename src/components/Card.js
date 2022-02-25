@@ -18,6 +18,11 @@ class Card extends Component {
       <section className="Card">
         <div className="cardInterno">
           <h3 data-testid="name-card">{ cardName }</h3>
+          {cardTrunfo === true ? (
+            <span data-testid="trunfo-card" className="Trunfo"> Super Trunfo</span>
+          ) : (
+            <p />
+          )}
           <img src={ cardImage } alt={ cardName } data-testid="image-card" />
           <div className="descrptionCard">
             <p data-testid="description-card">{cardDescription}</p>
@@ -29,13 +34,8 @@ class Card extends Component {
             <p data-testid="attr2-card">{ cardAttr2 }</p>
             <p>attr</p>
             <p data-testid="attr3-card">{ cardAttr3 }</p>
-            <p data-testid="rare-card">{ cardRare }</p>
+            <span data-testid="rare-card">{ cardRare }</span>
           </div>
-          {cardTrunfo === true ? (
-            <span data-testid="trunfo-card"> Super Trunfo</span>
-          ) : (
-            <p />
-          )}
         </div>
       </section>
     );

@@ -6,6 +6,9 @@
 }
 
 .Constructor {
+  background-image: url('https://i.pinimg.com/236x/70/17/c2/7017c22000438483851cdfdb5e8a7365.jpg');
+  background-size: contain;
+  border: 10px solid black;
   display: flex;
   justify-content: center;
   padding: 20px;
@@ -13,7 +16,7 @@
 
 .box {
   align-items: center;
-  background-color: red;
+  background-color: rgb(202, 197, 197);
   border: 2px solid black;
   display: flex;
   flex-direction: column;
@@ -28,5 +31,11 @@
 }
 
 .decktable {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk7mWj-rYGx3q0Jnbop9GqiBIrZZnbLFNVaA&usqp=CAU');
+  background-size: contain;
+  border: 10px solid rgba(255, 255, 255, 0.685);
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 30px;
 }
