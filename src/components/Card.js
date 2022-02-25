@@ -15,36 +15,29 @@ class Card extends Component {
       cardTrunfo,
     } = this.props;
     return (
-      <div className="box">
-        <h1>Pre Vizualizacao</h1>
-        <section className="Card">
-          <div className="cardInterno">
-            <h3 data-testid="name-card">{ cardName }</h3>
-            <img src={ cardImage } alt={ cardName } data-testid="image-card" />
-            <div className="descrptionCard">
-              <p data-testid="description-card">{ cardDescription }</p>
-            </div>
-            <div className="atributosCard">
-              <p>attr</p>
-              <p data-testid="attr1-card">
-                { cardAttr1 }
-              </p>
-              <p>Attr</p>
-              <p data-testid="attr2-card">
-                { cardAttr2 }
-              </p>
-              <p>attr</p>
-              <p data-testid="attr3-card">
-                { cardAttr3 }
-              </p>
-              <p data-testid="rare-card">{ cardRare }</p>
-            </div>
-            { cardTrunfo === true
-              ? <span data-testid="trunfo-card"> Super Trunfo</span>
-              : <p />}
+      <section className="Card">
+        <div className="cardInterno">
+          <h3 data-testid="name-card">{ cardName }</h3>
+          <img src={ cardImage } alt={ cardName } data-testid="image-card" />
+          <div className="descrptionCard">
+            <p data-testid="description-card">{cardDescription}</p>
           </div>
-        </section>
-      </div>
+          <div className="atributosCard">
+            <p>attr</p>
+            <p data-testid="attr1-card">{ cardAttr1 }</p>
+            <p>Attr</p>
+            <p data-testid="attr2-card">{ cardAttr2 }</p>
+            <p>attr</p>
+            <p data-testid="attr3-card">{ cardAttr3 }</p>
+            <p data-testid="rare-card">{ cardRare }</p>
+          </div>
+          {cardTrunfo === true ? (
+            <span data-testid="trunfo-card"> Super Trunfo</span>
+          ) : (
+            <p />
+          )}
+        </div>
+      </section>
     );
   }
 }

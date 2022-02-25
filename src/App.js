@@ -27,12 +27,13 @@ export default class App extends Component {
   }
 
   onInputChange({ target }) {
-    const value = (target.type === 'checkbox')
-      ? target.checked
-      : target.value;
-    this.setState({
-      [target.name]: value,
-    }, () => this.validateButton());
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    this.setState(
+      {
+        [target.name]: value,
+      },
+      () => this.validateButton(),
+    );
   }
 
   onSaveButtonClick() {
@@ -50,7 +51,6 @@ export default class App extends Component {
       cardTrunfo: false,
       isSaveButtonDisabled: true,
     });
-    console.log(state.baralho);
   }
 
   validateButton() {
@@ -67,12 +67,18 @@ export default class App extends Component {
     } = this.state;
     const total = Number(cardAttr1) + Number(cardAttr2) + Number(cardAttr3);
 
-    if (cardName === ''
+    if (
+      cardName === ''
       || cardDescription === ''
       || cardImage === ''
-      || cardAttr1 < min || cardAttr2 < min || cardAttr3 < min
-      || cardAttr1 > maxatt || cardAttr2 > maxatt || cardAttr3 > maxatt
-      || total > max) {
+      || cardAttr1 < min
+      || cardAttr2 < min
+      || cardAttr3 < min
+      || cardAttr1 > maxatt
+      || cardAttr2 > maxatt
+      || cardAttr3 > maxatt
+      || total > max
+    ) {
       this.setState({ isSaveButtonDisabled: true });
     } else {
       this.setState({ isSaveButtonDisabled: false });
@@ -81,34 +87,57 @@ export default class App extends Component {
 
   render() {
     const { state } = this;
+    const { baralho } = this.state;
     return (
-      <div className="tela">
-        <Form
-          cardName={ state.cardName }
-          cardDescription={ state.cardDescription }
-          cardAttr1={ state.cardAttr1 }
-          cardAttr2={ state.cardAttr2 }
-          cardAttr3={ state.cardAttr3 }
-          cardImage={ state.cardImage }
-          cardRare={ state.cardRare }
-          cardTrunfo={ state.cardTrunfo }
-          isSaveButtonDisabled={ state.isSaveButtonDisabled }
-          onInputChange={ this.onInputChange }
-          onSaveButtonClick={ this.onSaveButtonClick }
-          hasTrunfo={ state.hasTrunfo }
-        />
-        <Card
-          cardName={ state.cardName }
-          cardDescription={ state.cardDescription }
-          cardAttr1={ state.cardAttr1 }
-          cardAttr2={ state.cardAttr2 }
-          cardAttr3={ state.cardAttr3 }
-          cardImage={ state.cardImage }
-          cardRare={ state.cardRare }
-          cardTrunfo={ state.cardTrunfo }
-          isSaveButtonDisabled={ state.isSaveButtonDisabled }
-          onInputChange={ this.onInputChange }
-        />
+      <div>
+        <section className="Constructor">
+          <Form
+            cardName={ state.cardName }
+            cardDescription={ state.cardDescription }
+            cardAttr1={ state.cardAttr1 }
+            cardAttr2={ state.cardAttr2 }
+            cardAttr3={ state.cardAttr3 }
+            cardImage={ state.cardImage }
+            cardRare={ state.cardRare }
+            cardTrunfo={ state.cardTrunfo }
+            isSaveButtonDisabled={ state.isSaveButtonDisabled }
+            onInputChange={ this.onInputChange }
+            onSaveButtonClick={ this.onSaveButtonClick }
+            hasTrunfo={ state.hasTrunfo }
+          />
+          <div className="box">
+            <h1>Pre Vizualizacao</h1>
+            <Card
+              cardName={ state.cardName }
+              cardDescription={ state.cardDescription }
+              cardAttr1={ state.cardAttr1 }
+              cardAttr2={ state.cardAttr2 }
+              cardAttr3={ state.cardAttr3 }
+              cardImage={ state.cardImage }
+              cardRare={ state.cardRare }
+              cardTrunfo={ state.cardTrunfo }
+              isSaveButtonDisabled={ state.isSaveButtonDisabled }
+              onInputChange={ this.onInputChange }
+            />
+          </div>
+        </section>
+        <div className="decktable">
+          {baralho.map((info, index) => (
+            <Card
+              key={ index }
+              cardName={ info.cardName }
+              cardDescription={ info.cardDescription }
+              cardAttr1={ info.cardAttr1 }
+              cardAttr2={ info.cardAttr2 }
+              cardAttr3={ info.cardAttr3 }
+              cardImage={ info.cardImage }
+              cardRare={ info.cardRare }
+              cardTrunfo={ info.cardTrunfo }
+              isSaveButtonDisabled={ info.isSaveButtonDisabled }
+              onInputChange={ info.onInputChange }
+            />
+          ))}
+        </div>
       </div>
     );
   }

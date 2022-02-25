@@ -29,7 +29,7 @@ class Form extends Component {
               name="cardName"
               id="cardName"
               data-testid="name-input"
-              maxLength="28"
+              maxLength="50"
               value={ cardName }
               onChange={ onInputChange }
             />
