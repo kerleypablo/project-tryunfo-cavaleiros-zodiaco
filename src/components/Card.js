@@ -13,7 +13,6 @@ class Card extends Component {
       cardImage,
       cardRare,
       cardTrunfo,
-      attr = 'attr................................',
     } = this.props;
     return (
       <div className="box">
@@ -26,16 +25,16 @@ class Card extends Component {
               <p data-testid="description-card">{ cardDescription }</p>
             </div>
             <div className="atributosCard">
+              <p>attr</p>
               <p data-testid="attr1-card">
-                {attr}
                 { cardAttr1 }
               </p>
+              <p>Attr</p>
               <p data-testid="attr2-card">
-                {attr}
                 { cardAttr2 }
               </p>
+              <p>attr</p>
               <p data-testid="attr3-card">
-                {attr}
                 { cardAttr3 }
               </p>
               <p data-testid="rare-card">{ cardRare }</p>
@@ -55,11 +54,10 @@ export default Card;
 Card.propTypes = {
   cardName: PropType.string.isRequired,
   cardDescription: PropType.string.isRequired,
-  cardAttr1: PropType.number.isRequired,
-  cardAttr2: PropType.number.isRequired,
-  cardAttr3: PropType.number.isRequired,
+  cardAttr1: PropType.string.isRequired,
+  cardAttr2: PropType.string.isRequired,
+  cardAttr3: PropType.string.isRequired,
   cardImage: PropType.string.isRequired,
   cardRare: PropType.string.isRequired,
   cardTrunfo: PropType.bool.isRequired,
-  attr: PropType.bool.isRequired,
 };

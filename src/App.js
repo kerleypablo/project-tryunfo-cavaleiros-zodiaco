@@ -8,25 +8,51 @@ export default class App extends Component {
     super();
     this.state = {
       cardName: '',
-      cardDescription: 'descricao',
-      cardAttr1: 0,
-      cardAttr2: 0,
-      cardAttr3: 0,
-      cardImage: 'http://images.universohq.com/2005/05/envelope_cdz.jpg',
+      cardDescription: '',
+      cardAttr1: '',
+      cardAttr2: '',
+      cardAttr3: '',
+      cardImage: '',
       cardRare: 'normal',
       cardTrunfo: false,
       isSaveButtonDisabled: true,
     };
     this.onInputChange = this.onInputChange.bind(this);
+    this.validateButton = this.validateButton.bind(this);
   }
 
-  onInputChange(event) {
-    const value = (event.target.type === 'checkbox')
-      ? event.target.checked
-      : event.target.value;
+  onInputChange({ target }) {
+    const value = (target.type === 'checkbox')
+      ? target.checked
+      : target.value;
     this.setState({
-      [event.target.name]: value,
-    });
+      [target.name]: value,
+    }, () => this.validateButton());
+  }
+
+  validateButton() {
+    const max = 210;
+    const min = 0;
+    const maxatt = 90;
+    const {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage } = this.state;
+    const total = Number(cardAttr1) + Number(cardAttr2) + Number(cardAttr3);
+
+    if (cardName === ''
+      || cardDescription === ''
+      || cardImage === ''
+      || cardAttr1 < min || cardAttr2 < min || cardAttr3 < min
+      || cardAttr1 > maxatt || cardAttr2 > maxatt || cardAttr3 > maxatt
+      || total > max) {
+      this.setState({ isSaveButtonDisabled: true });
+    } else {
+      this.setState({ isSaveButtonDisabled: false });
+    }
   }
 
   render() {

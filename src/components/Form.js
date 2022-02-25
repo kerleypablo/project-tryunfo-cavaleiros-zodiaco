@@ -17,7 +17,6 @@ class Form extends Component {
       isSaveButtonDisabled,
       onSaveButtonClick,
     } = this.props;
-
     return (
       <div className="box_form">
         <h1>Adicionar carta </h1>
@@ -52,6 +51,8 @@ class Form extends Component {
               name="cardAttr1"
               id="cardAttr1"
               data-testid="attr1-input"
+              min="1"
+              max="100"
               value={ cardAttr1 }
               onChange={ onInputChange }
             />
@@ -63,6 +64,8 @@ class Form extends Component {
               name="cardAttr2"
               id="cardAttr2"
               data-testid="attr2-input"
+              min="1"
+              max="100"
               value={ cardAttr2 }
               onChange={ onInputChange }
             />
@@ -74,6 +77,8 @@ class Form extends Component {
               name="cardAttr3"
               id="cardAttr3"
               data-testid="attr3-input"
+              min="1"
+              max="100"
               value={ cardAttr3 }
               onChange={ onInputChange }
             />
@@ -133,15 +138,15 @@ class Form extends Component {
 Form.propTypes = {
   cardName: PropType.string.isRequired,
   cardDescription: PropType.string.isRequired,
-  cardAttr1: PropType.node.isRequired,
-  cardAttr2: PropType.number.isRequired,
-  cardAttr3: PropType.number.isRequired,
+  cardAttr1: PropType.string.isRequired,
+  cardAttr2: PropType.string.isRequired,
+  cardAttr3: PropType.string.isRequired,
   cardImage: PropType.string.isRequired,
   cardRare: PropType.string.isRequired,
   cardTrunfo: PropType.bool.isRequired,
   isSaveButtonDisabled: PropType.bool.isRequired,
-  onSaveButtonClick: PropType.string.isRequired,
-  onInputChange: PropType.string.isRequired,
+  onSaveButtonClick: PropType.func.isRequired,
+  onInputChange: PropType.func.isRequired,
 };
 
 export default Form;
